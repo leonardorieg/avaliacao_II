@@ -147,18 +147,25 @@ class detran {
 
 }
 
+// criando objetos
 let c1 = new carro("fusca", 1980, 100);
-c1.acelerar();
-console.log(c1.velocidade)
-
-
 let fiscal = new detran();
-
 let m1 = new motorista("leo", 18, 1080026677, 58565654, c1)
 
+//ultrapassando velocidade permitida 
+c1.acelerar();
+console.log(c1.velocidade)
 fiscal.radar(m1, 100);
 
+// dentro do limite 
 c1.frear();
 console.log(c1.velocidade);
+fiscal.radar(m1, 100);
+
+
+//ultrapassando velocidade mas ainda dentro da tolerancia 
+c1.velocidade = 102;
+console.log(c1.velocidade)
+fiscal.radar(m1, 100);
 
 fiscal.radar(m1, 100);
